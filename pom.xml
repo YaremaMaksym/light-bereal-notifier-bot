@@ -6,7 +6,7 @@
 
     <groupId>org.yaremax</groupId>
     <artifactId>light-bereal-notifier-bot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <javalin.version>6.4.0</javalin.version>
