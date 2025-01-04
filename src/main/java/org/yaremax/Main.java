@@ -17,7 +17,10 @@ public class Main {
             return;
         }
 
-        Javalin app = Javalin.create(config -> config.bundledPlugins.enableDevLogging()).start();
+        String portStr = getEnvVar("PORT");
+
+        Javalin app = Javalin.create(config -> config.bundledPlugins.enableDevLogging())
+                .start(Integer.parseInt(portStr));
 
         app.get("/api/v1/hello", ctx -> ctx.result("Hello from server!"));
 
@@ -25,5 +28,13 @@ public class Main {
             myTelegramBot.sendMessageToPrimaryChat("Hello!");
             ctx.result("Success");
         });
+    }
+
+    private static String getEnvVar(String key) {
+        String value = System.getenv(key);
+        if (value == null || value.isEmpty()) {
+            throw new IllegalStateException("Environment variable " + key + " is not set.");
+        }
+        return value;
     }
 }
