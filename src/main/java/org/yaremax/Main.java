@@ -4,6 +4,8 @@ import io.javalin.Javalin;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import static org.yaremax.Util.getEnvVar;
+
 public class Main {
     public static void main(String[] args) {
         MyTelegramBot myTelegramBot;
@@ -28,13 +30,5 @@ public class Main {
             myTelegramBot.sendMessageToPrimaryChat("Hello!");
             ctx.result("Success");
         });
-    }
-
-    private static String getEnvVar(String key) {
-        String value = System.getenv(key);
-        if (value == null || value.isEmpty()) {
-            throw new IllegalStateException("Environment variable " + key + " is not set.");
-        }
-        return value;
     }
 }

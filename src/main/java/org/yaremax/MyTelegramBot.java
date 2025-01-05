@@ -7,6 +7,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import static org.yaremax.Util.getEnvVar;
+
 public class MyTelegramBot extends TelegramLongPollingBot {
     private static final Logger logger = LoggerFactory.getLogger(MyTelegramBot.class);
 
@@ -51,13 +53,5 @@ public class MyTelegramBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             logger.error("Failed to send message to {}: {}", chatId, text, e);
         }
-    }
-
-    private static String getEnvVar(String key) {
-        String value = System.getenv(key);
-        if (value == null || value.isEmpty()) {
-            throw new IllegalStateException("Environment variable " + key + " is not set.");
-        }
-        return value;
     }
 }
