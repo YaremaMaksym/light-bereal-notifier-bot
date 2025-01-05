@@ -11,7 +11,6 @@
     <properties>
         <javalin.version>6.4.0</javalin.version>
         <telegram.bots.version>6.9.7.1</telegram.bots.version>
-        <jackson.databind.version>2.18.2</jackson.databind.version>
         <logback.classic.version>1.5.15</logback.classic.version>
         <java.version>21</java.version>
 
@@ -35,13 +34,6 @@
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots</artifactId>
             <version>${telegram.bots.version}</version>
-        </dependency>
-
-        <!-- JSON Parsing -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind.version}</version>
         </dependency>
 
         <!-- Logging -->
