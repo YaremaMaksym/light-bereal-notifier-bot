@@ -4,6 +4,8 @@ import io.javalin.Javalin;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
+import java.nio.charset.Charset;
+
 import static org.yaremax.Util.getEnvVar;
 
 public class Main {
@@ -31,5 +33,8 @@ public class Main {
             myTelegramBot.sendMessageToPrimaryChat(primaryMessage);
             ctx.result("Success");
         });
+
+        System.out.println(primaryMessage);
+        System.out.println(Charset.defaultCharset().displayName());
     }
 }
