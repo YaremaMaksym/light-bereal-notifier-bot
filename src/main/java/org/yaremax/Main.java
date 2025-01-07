@@ -20,6 +20,7 @@ public class Main {
         }
 
         String portStr = getEnvVar("PORT");
+        String primaryMessage = getEnvVar("TELEGRAM_PRIMARY_MESSAGE");
 
         Javalin app = Javalin.create(config -> config.bundledPlugins.enableDevLogging())
                 .start(Integer.parseInt(portStr));
@@ -27,7 +28,7 @@ public class Main {
         app.get("/api/v1/hello", ctx -> ctx.result("Hello from server!"));
 
         app.post("/api/v1/events", ctx -> {
-            myTelegramBot.sendMessageToPrimaryChat("⏰Ахтунх! Час бути ріл)⏰");
+            myTelegramBot.sendMessageToPrimaryChat(primaryMessage);
             ctx.result("Success");
         });
     }
