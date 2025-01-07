@@ -35,6 +35,7 @@ public class Main {
         });
 
         System.out.println(primaryMessage);
-        System.out.println(Charset.defaultCharset().displayName());
+        System.out.println("Default Charset = " + Charset.defaultCharset());
+        System.out.println("file.encoding = " + System.getProperty("file.encoding"));
     }
 }
