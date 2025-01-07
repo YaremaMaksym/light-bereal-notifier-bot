@@ -27,7 +27,7 @@ public class Main {
         app.get("/api/v1/hello", ctx -> ctx.result("Hello from server!"));
 
         app.post("/api/v1/events", ctx -> {
-            myTelegramBot.sendMessageToPrimaryChat("⏰Ахтунх! Час бути ріл⏰");
+            myTelegramBot.sendMessageToPrimaryChat("⏰Ахтунх! Час бути ріл)⏰");
             ctx.result("Success");
         });
     }
