@@ -1,1 +1,1 @@
-web: java -jar target/light-bereal-notifier-bot-1.0.0-SNAPSHOT.jar
+web: java -Dfile.encoding=UTF-8 -jar target/light-bereal-notifier-bot-1.0.0-SNAPSHOT.jar
